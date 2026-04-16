@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Dental & Medical Complex | Lahore</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --navy: #0a1628;
+    --deep-teal: #0d3b5e;
+    --teal: #1a6b8a;
+    --sky: #2196b5;
+    --gold: #c9a227;
+    --gold-light: #e8c547;
+    --cream: #f8f4ed;
+    --white: #ffffff;
+    --gray-soft: #f0f4f8;
+    --gray-text: #6b7a8d;
+    --text-dark: #1a2332;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    background: var(--navy);
+    color: rgba(255,255,255,.7);
+    font-size: .78rem;
+    padding: .55rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: .03em;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; }
+  .topbar-left, .topbar-right { display: flex; gap: 1.6rem; align-items: center; }
+  .topbar i { margin-right: .35rem; color: var(--sky); }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky; top: 0; z-index: 1000;
+    background: rgba(255,255,255,.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 4px 24px rgba(10,22,40,.08);
+    transition: all .3s;
+  }
+  .nav-logo { display: flex; align-items: center; gap: .75rem; }
+  .nav-logo .logo-icon {
+    width: 46px; height: 46px;
+    background: linear-gradient(135deg, var(--teal), var(--deep-teal));
+    border-radius: 12px;
+    display: grid; place-items: center;
+    font-size: 1.4rem; color: white;
+  }
+  .nav-logo .logo-text { line-height: 1.1; }
+  .nav-logo .logo-text strong {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--navy);
+  }
+  .nav-logo .logo-text span {
+    font-size: .72rem; color: var(--teal); font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--navy);
+    font-size: .9rem; font-weight: 500;
+    position: relative; padding-bottom: 4px;
+    transition: color .2s;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--gold);
+    transition: width .3s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--teal), var(--deep-teal));
+    color: white !important;
+    padding: .6rem 1.4rem; border-radius: 50px;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 16px rgba(26,107,138,.3);
+  }
+  .nav-cta:hover { box-shadow: 0 6px 24px rgba(26,107,138,.5); transform: translateY(-1px); }
+  .nav-cta::after { display: none !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .3s; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 92vh;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep-teal) 50%, #0f4c6e 100%);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(33,150,181,.18) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 20% 20%, rgba(201,162,39,.08) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(201,162,39,.15); border: 1px solid rgba(201,162,39,.4);
+    color: var(--gold-light); padding: .4rem 1rem; border-radius: 50px;
+    font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp .8s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.1; color: white;
+    margin-bottom: 1rem;
+    animation: fadeInUp .8s .1s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-sub {
+    color: rgba(255,255,255,.65); font-size: 1.05rem; line-height: 1.7;
+    max-width: 480px; margin-bottom: 2.4rem;
+    animation: fadeInUp .8s .2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeInUp .8s .3s ease both;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy); padding: .85rem 2rem; border-radius: 50px;
+    font-weight: 700; font-size: .95rem; text-decoration: none;
+    box-shadow: 0 6px 24px rgba(201,162,39,.4);
+    transition: all .3s; display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(201,162,39,.5); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,.4); color: white;
+    padding: .85rem 2rem; border-radius: 50px;
+    font-weight: 600; font-size: .95rem; text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all .3s; display: inline-flex; align-items: center; gap: .5rem;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,.1); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    animation: fadeInUp .8s .4s ease both;
+  }
+  .hero-stat strong { display: block; font-size: 2rem; font-family: 'Playfair Display', serif; color: var(--gold-light); }
+  .hero-stat span { font-size: .8rem; color: rgba(255,255,255,.55); letter-spacing: .05em; text-transform: uppercase; }
+  .hero-visual {
+    position: relative; display: grid;
+    grid-template-columns: 1fr 1fr; gap: 1rem;
+    animation: fadeInRight .8s .2s ease both;
+  }
+  .hero-card {
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    backdrop-filter: blur(12px); border-radius: 16px;
+    padding: 1.4rem 1.2rem; text-align: center;
+    transition: all .3s;
+  }
+  .hero-card:hover { background: rgba(255,255,255,.12); transform: translateY(-4px); }
+  .hero-card i { font-size: 2rem; color: var(--sky); margin-bottom: .7rem; }
+  .hero-card p { color: rgba(255,255,255,.8); font-size: .82rem; font-weight: 500; }
+  .hero-card.accent { background: rgba(201,162,39,.12); border-color: rgba(201,162,39,.3); }
+  .hero-card.accent i { color: var(--gold-light); }
+  .hero-card.span2 { grid-column: span 2; }
+
+  /* ─── TRUST BAR ─── */
+  .trust-bar {
+    background: var(--gold);
+    padding: 1.2rem 2rem;
+    display: flex; justify-content: center; gap: 3rem;
+    flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: .7rem; font-weight: 600; font-size: .88rem; color: var(--navy); }
+  .trust-item i { font-size: 1.1rem; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: .6rem; display: flex; align-items: center; gap: .6rem;
+  }
+  .section-label::before { content: ''; width: 28px; height: 2px; background: var(--gold); }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15; color: var(--navy); margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--teal); }
+  .section-desc { color: var(--gray-text); font-size: 1rem; line-height: 1.75; max-width: 560px; }
+
+  /* ─── ABOUT ─── */
+  .about { background: var(--gray-soft); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-visual { position: relative; }
+  .about-img-wrap {
+    background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+    border-radius: 24px; padding: 3rem 2.5rem; text-align: center;
+    position: relative; overflow: hidden;
+    box-shadow: 0 24px 64px rgba(13,59,94,.25);
+  }
+  .about-img-wrap::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(255,255,255,.06); border-radius: 50%;
+  }
+  .about-icon { font-size: 5rem; color: rgba(255,255,255,.9); margin-bottom: 1rem; }
+  .about-img-wrap h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin-bottom: .5rem; }
+  .about-img-wrap p { color: rgba(255,255,255,.7); font-size: .88rem; }
+  .reg-badge {
+    position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--navy); padding: .6rem 1.5rem;
+    border-radius: 50px; font-size: .78rem; font-weight: 700; white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(201,162,39,.4);
+  }
+  .about-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .about-feat {
+    display: flex; align-items: flex-start; gap: 1rem;
+    background: white; padding: 1.2rem 1.4rem; border-radius: 12px;
+    border-left: 3px solid var(--teal);
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    transition: all .3s;
+  }
+  .about-feat:hover { border-left-color: var(--gold); transform: translateX(4px); }
+  .about-feat i { color: var(--teal); font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+  .about-feat h4 { font-size: .92rem; font-weight: 600; color: var(--navy); margin-bottom: .25rem; }
+  .about-feat p { font-size: .82rem; color: var(--gray-text); line-height: 1.5; }
+
+  /* ─── SERVICES ─── */
+  .services { background: white; }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .service-card {
+    background: var(--gray-soft); border-radius: 20px;
+    padding: 2rem 1.6rem; text-align: center;
+    border: 2px solid transparent;
+    transition: all .35s cubic-bezier(.25,.8,.25,1);
+    position: relative; overflow: hidden; cursor: pointer;
+  }
+  .service-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+    opacity: 0; transition: opacity .35s;
+  }
+  .service-card:hover { border-color: var(--teal); transform: translateY(-6px); box-shadow: 0 16px 48px rgba(13,59,94,.15); }
+  .service-card:hover::before { opacity: 1; }
+  .service-card:hover .sc-icon, .service-card:hover h3, .service-card:hover p { color: white; }
+  .sc-icon {
+    font-size: 2.2rem; color: var(--teal);
+    margin-bottom: 1rem; position: relative; z-index: 1; transition: color .35s;
+  }
+  .service-card h3 {
+    font-size: .98rem; font-weight: 700; color: var(--navy);
+    margin-bottom: .4rem; position: relative; z-index: 1; transition: color .35s;
+  }
+  .service-card p {
+    font-size: .8rem; color: var(--gray-text); line-height: 1.5;
+    position: relative; z-index: 1; transition: color .35s;
+  }
+
+  /* ─── DOCTORS ─── */
+  .doctors { background: var(--navy); }
+  .doctors .section-label { color: var(--gold-light); }
+  .doctors .section-label::before { background: var(--gold); }
+  .doctors .section-title { color: white; }
+  .doctors .section-desc { color: rgba(255,255,255,.55); }
+  .doctors-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .doctor-card {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px; padding: 2rem 1.6rem; text-align: center;
+    backdrop-filter: blur(8px);
+    transition: all .3s;
+  }
+  .doctor-card:hover { background: rgba(255,255,255,.1); border-color: var(--gold); transform: translateY(-5px); }
+  .doc-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--sky));
+    display: grid; place-items: center;
+    margin: 0 auto 1.2rem; font-size: 2rem; color: white;
+    border: 3px solid rgba(201,162,39,.4);
+  }
+  .doctor-card h3 { font-family: 'Playfair Display', serif; color: white; font-size: 1.1rem; margin-bottom: .3rem; }
+  .doc-title { color: var(--gold-light); font-size: .78rem; font-weight: 600; letter-spacing: .05em; margin-bottom: .5rem; }
+  .doc-spec { color: rgba(255,255,255,.5); font-size: .8rem; }
+
+  /* ─── WHY US ─── */
+  .why { background: var(--cream); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .why-visual {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+  }
+  .why-stat-card {
+    background: white; border-radius: 20px; padding: 2rem 1.5rem; text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    transition: all .3s;
+  }
+  .why-stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
+  .why-stat-card.accent { background: linear-gradient(135deg, var(--deep-teal), var(--teal)); }
+  .why-stat-card.accent strong, .why-stat-card.accent span { color: white; }
+  .why-stat-card strong { display: block; font-family: 'Playfair Display', serif; font-size: 2.6rem; color: var(--teal); line-height: 1; }
+  .why-stat-card span { font-size: .8rem; color: var(--gray-text); font-weight: 500; }
+  .why-points { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 2.5rem; }
+  .why-point { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .why-icon {
+    width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px;
+    background: linear-gradient(135deg, var(--teal), var(--sky));
+    display: grid; place-items: center; color: white; font-size: 1rem;
+  }
+  .why-point h4 { font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .25rem; }
+  .why-point p { font-size: .84rem; color: var(--gray-text); line-height: 1.55; }
+
+  /* ─── APPOINTMENT ─── */
+  .appointment {
+    background: linear-gradient(135deg, var(--deep-teal) 0%, var(--navy) 100%);
+    position: relative; overflow: hidden;
+  }
+  .appointment::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: rgba(201,162,39,.08); border-radius: 50%;
+  }
+  .appt-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .appt-text h2 { font-family: 'Playfair Display', serif; color: white; font-size: 2.6rem; margin-bottom: 1rem; }
+  .appt-text p { color: rgba(255,255,255,.6); line-height: 1.7; margin-bottom: 2rem; }
+  .appt-contacts { display: flex; flex-direction: column; gap: 1rem; }
+  .appt-contact {
+    display: flex; align-items: center; gap: 1rem;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px; padding: 1rem 1.4rem;
+    text-decoration: none; color: white; transition: all .3s;
+  }
+  .appt-contact:hover { background: rgba(255,255,255,.12); border-color: var(--gold); }
+  .appt-contact i { color: var(--gold-light); font-size: 1.2rem; }
+  .appt-contact strong { display: block; font-size: .95rem; }
+  .appt-contact span { font-size: .78rem; color: rgba(255,255,255,.5); }
+  .appt-form {
+    background: white; border-radius: 24px; padding: 2.5rem;
+    box-shadow: 0 24px 64px rgba(0,0,0,.2);
+    position: relative; z-index: 1;
+  }
+  .appt-form h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-size: .82rem; font-weight: 600; color: var(--navy); margin-bottom: .4rem; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; border: 2px solid #e4e9f0; border-radius: 10px;
+    padding: .75rem 1rem; font-family: 'DM Sans', sans-serif; font-size: .9rem;
+    color: var(--text-dark); outline: none; transition: border-color .2s;
+    background: var(--gray-soft);
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--teal); background: white;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-submit {
+    width: 100%; background: linear-gradient(135deg, var(--teal), var(--deep-teal));
+    color: white; padding: 1rem; border-radius: 10px;
+    font-size: 1rem; font-weight: 700; border: none; cursor: pointer;
+    transition: all .3s; font-family: 'DM Sans', sans-serif;
+    box-shadow: 0 6px 24px rgba(13,59,94,.3);
+  }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(13,59,94,.4); }
+
+  /* ─── LOCATION ─── */
+  .location { background: var(--gray-soft); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .location-card {
+    background: white; border-radius: 20px; padding: 2.5rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  }
+  .location-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 1.5rem; }
+  .loc-detail {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem 0; border-bottom: 1px solid #e9eef4;
+  }
+  .loc-detail:last-child { border-bottom: none; }
+  .loc-detail i { color: var(--teal); font-size: 1.1rem; margin-top: 2px; }
+  .loc-detail strong { display: block; font-size: .88rem; font-weight: 700; color: var(--navy); margin-bottom: .2rem; }
+  .loc-detail span { font-size: .84rem; color: var(--gray-text); line-height: 1.5; }
+  .map-placeholder {
+    background: linear-gradient(135deg, var(--deep-teal), var(--teal));
+    border-radius: 20px; min-height: 320px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: white; text-align: center; padding: 2rem;
+    box-shadow: 0 12px 48px rgba(13,59,94,.2);
+    gap: 1rem;
+  }
+  .map-placeholder i { font-size: 3.5rem; opacity: .8; }
+  .map-placeholder h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+  .map-placeholder p { opacity: .7; font-size: .88rem; line-height: 1.6; }
+  .map-placeholder a {
+    background: var(--gold); color: var(--navy); text-decoration: none;
+    padding: .7rem 1.8rem; border-radius: 50px;
+    font-weight: 700; font-size: .88rem; margin-top: .5rem;
+    transition: all .3s;
+  }
+  .map-placeholder a:hover { background: var(--gold-light); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,.6);
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+  .footer-brand .fi { width: 44px; height: 44px; background: linear-gradient(135deg, var(--teal), var(--deep-teal)); border-radius: 10px; display: grid; place-items: center; font-size: 1.2rem; color: white; }
+  .footer-brand strong { font-family: 'Playfair Display', serif; color: white; font-size: 1rem; display: block; }
+  .footer-brand > p { font-size: .84rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .socials { display: flex; gap: .75rem; }
+  .social { width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,.15); display: grid; place-items: center; color: rgba(255,255,255,.6); font-size: .9rem; text-decoration: none; transition: all .2s; }
+  .social:hover { background: var(--teal); border-color: var(--teal); color: white; }
+  footer h4 { color: white; font-size: .9rem; font-weight: 700; margin-bottom: 1.2rem; letter-spacing: .04em; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+  .footer-links a { color: rgba(255,255,255,.55); font-size: .84rem; text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,.1);
+    padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .8rem; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom a { color: var(--gold-light); text-decoration: none; }
+
+  /* ─── SCROLL TOP ─── */
+  .scroll-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--gold); color: var(--navy);
+    display: grid; place-items: center; font-size: 1.1rem;
+    cursor: pointer; border: none;
+    box-shadow: 0 6px 24px rgba(201,162,39,.4);
+    transition: all .3s; opacity: 0; pointer-events: none; z-index: 999;
+  }
+  .scroll-top.visible { opacity: 1; pointer-events: auto; }
+  .scroll-top:hover { transform: translateY(-3px); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: all .7s cubic-bezier(.25,.8,.25,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .1s; }
+  .reveal-d2 { transition-delay: .2s; }
+  .reveal-d3 { transition-delay: .3s; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    .hero-content, .about-grid, .why-grid, .appt-inner, .location-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-visual { display: none; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,.1); gap: 1rem; border-top: 1px solid #eee; }
+    .nav-links.open { display: flex; }
+    nav { position: relative; }
+    .hamburger { display: flex; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .why-grid { gap: 3rem; }
+    .topbar-left { display: none; }
+  }
+  @media (max-width: 480px) {
+    section { padding: 4rem 1.2rem; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .trust-bar { gap: 1.2rem; flex-direction: column; align-items: flex-start; padding: 1.2rem 1.5rem; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span><i class="fas fa-shield-halved"></i> PHC Reg # R-83334</span>
+    <span><i class="fas fa-clock"></i> Mon–Sat: 9am – 10pm</span>
+  </div>
+  <div class="topbar-right">
+    <a href="tel:03005193910"><i class="fas fa-phone"></i> 0300-5193910</a>
+    <a href="tel:03335198000"><i class="fas fa-phone"></i> 0333-5198000</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="logo-icon"><i class="fas fa-tooth"></i></div>
+    <div class="logo-text">
+      <strong>Sunny Dental & Medical</strong>
+      <span>Complex · Lahore</span>
+    </div>
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctors">Doctors</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#location">Location</a></li>
+    <li><a href="#appointment" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge"><i class="fas fa-star"></i> Your Health Is Our Priority</div>
+      <h1>Trusted <em>Medical</em> & Dental Care in Lahore</h1>
+      <p class="hero-sub">Comprehensive healthcare under one roof — from dental surgery to specialist consultations. Led by Dr. Hanan Haroon and a team of expert consultants.</p>
+      <div class="hero-actions">
+        <a href="#appointment" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+        <a href="#doctors" class="btn-outline"><i class="fas fa-user-doctor"></i> Our Doctors</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>10+</strong><span>Specialists</span></div>
+        <div class="hero-stat"><strong>5K+</strong><span>Patients Served</span></div>
+        <div class="hero-stat"><strong>15+</strong><span>Years Experience</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card"><i class="fas fa-tooth"></i><p>Dental Surgery</p></div>
+      <div class="hero-card accent"><i class="fas fa-baby"></i><p>Child Specialist</p></div>
+      <div class="hero-card accent"><i class="fas fa-brain"></i><p>Neurology</p></div>
+      <div class="hero-card"><i class="fas fa-heartbeat"></i><p>Family Medicine</p></div>
+      <div class="hero-card span2"><i class="fas fa-star-of-life"></i><p>Digital X-Ray · Scaling · Root Canal · All Surgical Procedures</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><i class="fas fa-shield-halved"></i> PHC Registered</div>
+  <div class="trust-item"><i class="fas fa-x-ray"></i> Digital X-Ray Available</div>
+  <div class="trust-item"><i class="fas fa-user-doctor"></i> 10+ Specialist Doctors</div>
+  <div class="trust-item"><i class="fas fa-clock"></i> Evening Hours Available</div>
+  <div class="trust-item"><i class="fas fa-location-dot"></i> Valencia Town, Lahore</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-wrap">
+          <i class="fas fa-hospital-user about-icon"></i>
+          <h3>Dr. Hanan Haroon</h3>
+          <p>MBBS · MFPH · DPH · FCMHS · D.Derm (Aleppo)<br>Senior Physician & Dermatologist</p>
+          <div class="reg-badge">✦ PHC Reg # R-83334</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Comprehensive <em>Healthcare</em> Under One Roof</h2>
+        <p class="section-desc">Sunny Dental & Medical Complex is a trusted multi-specialty clinic located in Valencia Town, Lahore. We bring together experienced consultants across multiple disciplines to offer complete family care.</p>
+        <div class="about-features">
+          <div class="about-feat reveal reveal-d1">
+            <i class="fas fa-microscope"></i>
+            <div><h4>Advanced Diagnostics</h4><p>Digital X-Ray, lab services, and modern imaging for accurate diagnosis.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-d2">
+            <i class="fas fa-user-group"></i>
+            <div><h4>Multi-Specialty Team</h4><p>10+ visiting consultants covering all major medical and dental specialties.</p></div>
+          </div>
+          <div class="about-feat reveal reveal-d3">
+            <i class="fas fa-hand-holding-heart"></i>
+            <div><h4>Patient-First Approach</h4><p>Compassionate care tailored to every patient, from children to seniors.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Our <em>Specialties</em></h2>
+    <p class="section-desc">Expert care across a wide range of medical and dental disciplines — all in one convenient location.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <i class="fas fa-tooth sc-icon"></i>
+        <h3>Dental Surgery</h3>
+        <p>Root canal, scaling, whitening, extractions & all surgical procedures</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <i class="fas fa-spa sc-icon"></i>
+        <h3>Skin Specialist</h3>
+        <p>Dermatology, acne, laser & aesthetic skin treatments</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <i class="fas fa-ear-listen sc-icon"></i>
+        <h3>ENT Specialist</h3>
+        <p>Ear, nose & throat diagnosis and surgical care</p>
+      </div>
+      <div class="service-card reveal">
+        <i class="fas fa-baby sc-icon"></i>
+        <h3>Child Specialist</h3>
+        <p>Pediatric consultations, immunizations & growth monitoring</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <i class="fas fa-brain sc-icon"></i>
+        <h3>Psychologist</h3>
+        <p>Mental health assessments, therapy & counseling services</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <i class="fas fa-person-breastfeeding sc-icon"></i>
+        <h3>Gynecologist</h3>
+        <p>Women's health, prenatal care & gynecological treatments</p>
+      </div>
+      <div class="service-card reveal">
+        <i class="fas fa-dumbbell sc-icon"></i>
+        <h3>Physiotherapist</h3>
+        <p>Rehabilitation, pain management & sports injury recovery</p>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <i class="fas fa-stethoscope sc-icon"></i>
+        <h3>Family Physician</h3>
+        <p>General medicine, chronic disease management & preventive care</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <i class="fas fa-network-wired sc-icon"></i>
+        <h3>Consultant Neurologist</h3>
+        <p>Brain, spine & nerve disorder diagnosis and treatment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors" id="doctors">
+  <div class="container">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Meet Our <em>Expert</em> Consultants</h2>
+    <p class="section-desc">A distinguished panel of doctors with decades of combined experience serving the Lahore community.</p>
+    <div class="doctors-grid">
+      <div class="doctor-card reveal">
+        <div class="doc-avatar"><i class="fas fa-user-doctor"></i></div>
+        <h3>Dr. Hanan Haroon</h3>
+        <div class="doc-title">Senior Physician & Dermatologist</div>
+        <div class="doc-spec">MBBS · MFPH · DPH · FCMHS · D.Derm</div>
+      </div>
+      <div class="doctor-card reveal reveal-d1">
+        <div class="doc-avatar"><i class="fas fa-user-md"></i></div>
+        <h3>Dr. Rafiq Ahmad Siddiqui</h3>
+        <div class="doc-title">Senior Family Physician</div>
+        <div class="doc-spec">MBBS · MFPH · DPH — Assistant Professor</div>
+      </div>
+      <div class="doctor-card reveal reveal-d2">
+        <div class="doc-avatar"><i class="fas fa-user-doctor"></i></div>
+        <h3>Dr. Abdul Rashid Baig</h3>
+        <div class="doc-title">Rheumatology Consultant</div>
+        <div class="doc-spec">Specialist in Joint & Autoimmune Disorders</div>
+      </div>
+      <div class="doctor-card reveal">
+        <div class="doc-avatar"><i class="fas fa-female"></i></div>
+        <h3>Dr. Iqra Fatima</h3>
+        <div class="doc-title">Gynecologist</div>
+        <div class="doc-spec">MBBS · FCPS · MRCOG — Women's Health</div>
+      </div>
+      <div class="doctor-card reveal reveal-d1">
+        <div class="doc-avatar"><i class="fas fa-user-md"></i></div>
+        <h3>Dr. Syed Muhammad</h3>
+        <div class="doc-title">Consultant</div>
+        <div class="doc-spec">Specialist Medical Consultant</div>
+      </div>
+      <div class="doctor-card reveal reveal-d2">
+        <div class="doc-avatar"><i class="fas fa-user-doctor"></i></div>
+        <h3>Dr. Muhammad Usama Sarwar</h3>
+        <div class="doc-title">Consultant</div>
+        <div class="doc-spec">MBBS · MCPS — Medical Specialist</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Healthcare You Can <em>Trust</em></h2>
+        <p class="section-desc">We're committed to delivering world-class care with warmth, precision, and accessibility for every family in Lahore.</p>
+        <div class="why-points">
+          <div class="why-point reveal">
+            <div class="why-icon"><i class="fas fa-award"></i></div>
+            <div><h4>PHC Registered & Certified</h4><p>Fully licensed by Punjab Healthcare Commission ensuring the highest standards of patient safety.</p></div>
+          </div>
+          <div class="why-point reveal reveal-d1">
+            <div class="why-icon"><i class="fas fa-x-ray"></i></div>
+            <div><h4>In-House Digital X-Ray</h4><p>Fast, accurate digital diagnostics on-site — no need to visit a separate lab.</p></div>
+          </div>
+          <div class="why-point reveal reveal-d2">
+            <div class="why-icon"><i class="fas fa-calendar-check"></i></div>
+            <div><h4>Flexible Appointment Hours</h4><p>Morning and evening slots available 6 days a week to fit your busy schedule.</p></div>
+          </div>
+          <div class="why-point reveal reveal-d3">
+            <div class="why-icon"><i class="fas fa-location-dot"></i></div>
+            <div><h4>Conveniently Located</h4><p>Easy to reach near Valencia Town, Naz Town, Lahore — with ample parking nearby.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="why-stat-card">
+          <strong>10+</strong>
+          <span>Expert Specialists</span>
+        </div>
+        <div class="why-stat-card accent">
+          <strong>5K+</strong>
+          <span>Happy Patients</span>
+        </div>
+        <div class="why-stat-card accent">
+          <strong>15+</strong>
+          <span>Years of Service</span>
+        </div>
+        <div class="why-stat-card">
+          <strong>9+</strong>
+          <span>Specialties</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section class="appointment" id="appointment">
+  <div class="container">
+    <div class="appt-inner">
+      <div class="appt-text">
+        <div class="section-label" style="color:var(--gold-light)">Get In Touch</div>
+        <h2>Book Your <br>Appointment Today</h2>
+        <p>Don't delay your health. Our team is ready to welcome you and provide the expert care you deserve. Walk-ins also welcome.</p>
+        <div class="appt-contacts">
+          <a href="tel:03005193910" class="appt-contact">
+            <i class="fas fa-phone"></i>
+            <div><strong>0300-5193910</strong><span>Primary Contact</span></div>
+          </a>
+          <a href="tel:03335198000" class="appt-contact">
+            <i class="fas fa-phone"></i>
+            <div><strong>0333-5198000</strong><span>Secondary Contact</span></div>
+          </a>
+          <div class="appt-contact">
+            <i class="fas fa-location-dot"></i>
+            <div><strong>28-A Naz Town, Near Valencia Town</strong><span>Lahore, Punjab</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="appt-form">
+        <h3>Request an Appointment</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="03XX-XXXXXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Select Specialty</label>
+          <select>
+            <option value="">Choose a department</option>
+            <option>Dental Surgery</option>
+            <option>Skin Specialist</option>
+            <option>ENT Specialist</option>
+            <option>Child Specialist</option>
+            <option>Psychologist</option>
+            <option>Gynecologist</option>
+            <option>Physiotherapist</option>
+            <option>Family Physician</option>
+            <option>Consultant Neurologist</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date">
+          </div>
+          <div class="form-group">
+            <label>Preferred Time</label>
+            <select>
+              <option>Morning (9am – 1pm)</option>
+              <option>Evening (4pm – 10pm)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Brief Description (optional)</label>
+          <textarea rows="3" placeholder="Describe your concern..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="handleSubmit(event)">
+          <i class="fas fa-calendar-check"></i> Confirm Appointment
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location" id="location">
+  <div class="container">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Visit Our <em>Clinic</em></h2>
+    <div class="location-grid" style="margin-top:3rem">
+      <div class="location-card">
+        <h3>Contact & Hours</h3>
+        <div class="loc-detail">
+          <i class="fas fa-location-dot"></i>
+          <div>
+            <strong>Address</strong>
+            <span>28-A Naz Town, Near Valencia Town, Lahore, Punjab, Pakistan</span>
+          </div>
+        </div>
+        <div class="loc-detail">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Phone Numbers</strong>
+            <span>0300-5193910 &nbsp;|&nbsp; 0333-5198000</span>
+          </div>
+        </div>
+        <div class="loc-detail">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Clinic Hours</strong>
+            <span>Monday – Saturday: 9:00 AM – 10:00 PM<br>Sunday: Emergency / By Appointment</span>
+          </div>
+        </div>
+        <div class="loc-detail">
+          <i class="fas fa-shield-halved"></i>
+          <div>
+            <strong>Registration</strong>
+            <span>Punjab Healthcare Commission — PHC Reg # R-83334</span>
+          </div>
+        </div>
+        <div class="loc-detail">
+          <i class="fas fa-x-ray"></i>
+          <div>
+            <strong>Facilities</strong>
+            <span>Digital X-Ray · Dental Lab · Consultation Rooms · Pharmacy</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <i class="fas fa-map-location-dot"></i>
+        <h4>28-A Naz Town</h4>
+        <p>Near Valencia Town, Lahore<br>Punjab, Pakistan</p>
+        <a href="https://maps.google.com/?q=Naz+Town+Valencia+Town+Lahore" target="_blank">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="fi"><i class="fas fa-tooth"></i></div>
+        <div>
+          <strong>Sunny Dental & Medical Complex</strong>
+          <span style="font-size:.78rem;color:rgba(255,255,255,.45)">Lahore, Punjab</span>
+        </div>
+      </div>
+      <p>Trusted multi-specialty healthcare in Valencia Town, Lahore. Expert doctors, compassionate care, and modern facilities — all under one roof.</p>
+      <div class="socials">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#doctors">Our Doctors</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+        <li><a href="#location">Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Specialties</h4>
+      <ul class="footer-links">
+        <li><a href="#">Dental Surgery</a></li>
+        <li><a href="#">Skin Specialist</a></li>
+        <li><a href="#">ENT Specialist</a></li>
+        <li><a href="#">Child Specialist</a></li>
+        <li><a href="#">Gynecology</a></li>
+        <li><a href="#">Neurology</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:03005193910"><i class="fas fa-phone" style="color:var(--teal);margin-right:.4rem"></i>0300-5193910</a></li>
+        <li><a href="tel:03335198000"><i class="fas fa-phone" style="color:var(--teal);margin-right:.4rem"></i>0333-5198000</a></li>
+        <li><span style="color:rgba(255,255,255,.4);font-size:.84rem"><i class="fas fa-location-dot" style="color:var(--teal);margin-right:.4rem"></i>28-A Naz Town, Lahore</span></li>
+        <li><span style="color:rgba(255,255,255,.4);font-size:.84rem"><i class="fas fa-clock" style="color:var(--teal);margin-right:.4rem"></i>9am – 10pm, Mon–Sat</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sunny Dental & Medical Complex. All rights reserved.</span>
+    <span>PHC Reg # R-83334 &nbsp;·&nbsp; Developed with <i class="fas fa-heart" style="color:var(--gold)"></i></span>
+  </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // NAV toggle
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Scroll effects
+  window.addEventListener('scroll', () => {
+    const st = document.getElementById('scrollTop');
+    if (window.scrollY > 400) st.classList.add('visible');
+    else st.classList.remove('visible');
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => obs.observe(r));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target;
+    btn.innerHTML = '<i class="fas fa-check"></i> Appointment Requested!';
+    btn.style.background = 'linear-gradient(135deg,#27ae60,#1e8449)';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-calendar-check"></i> Confirm Appointment';
+      btn.style.background = '';
+    }, 3500);
+  }
+
+  // Smooth nav close on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
